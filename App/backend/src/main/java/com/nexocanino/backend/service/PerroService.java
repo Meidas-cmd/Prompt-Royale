@@ -5,6 +5,8 @@ import com.nexocanino.backend.model.Raza;
 import com.nexocanino.backend.repository.PerroRepository;
 import com.nexocanino.backend.repository.RazaRepository;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -23,6 +25,10 @@ public class PerroService {
 
     public List<Perro> listarTodos() {
         return perroRepository.findAll();
+    }
+
+    public Page<Perro> listarPaginado(Pageable pageable) {
+        return perroRepository.findAll(pageable);
     }
 
     public Perro buscarPorId(Long id) {

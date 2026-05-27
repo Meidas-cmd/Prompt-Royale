@@ -4,6 +4,8 @@ import com.nexocanino.backend.model.Perro;
 import com.nexocanino.backend.service.PerroService;
 import java.net.URI;
 import java.util.List;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
@@ -27,8 +30,19 @@ public class PerroController {
     }
 
     @GetMapping
-    public List<Perro> listarTodos() {
-        return perroService.listarTodos();
+    public ResponseEntity<?> listarTodos(
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer size,
+            @RequestParam(defaultValue = "id") String sort,
+            @RequestParam(defaultValue = "asc") String direction
+    ) {
+        if (page == null || size == null) {
+            List<Perro> perros = perroService.listarTodos();
+            return ResponseEntity.ok(perros);
+        }
+
+        Sort.Direction sortDirection = Sort.Direction.fromOptionalString(direction).orElse(Sort.Direction.ASC);
+        return ResponseEntity.ok(perroService.listarPaginado(PageRequest.of(page, size, Sort.by(sortDirection, sort))));
     }
 
     @GetMapping("/{id}")
