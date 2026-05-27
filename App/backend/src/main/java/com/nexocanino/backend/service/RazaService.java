@@ -23,9 +23,30 @@ public class RazaService {
         this.perroRepository = perroRepository;
     }
 
+    public List<Raza> listarTodas() {
+        return razaRepository.findAll();
+    }
+
     public Raza buscarPorId(Long id) {
         return razaRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Raza no encontrada con id " + id));
+    }
+
+    public Raza crear(Raza raza) {
+        raza.setId(null);
+        return razaRepository.save(raza);
+    }
+
+    public Raza actualizar(Long id, Raza datosRaza) {
+        Raza raza = buscarPorId(id);
+        raza.setNombre(datosRaza.getNombre());
+        raza.setDescripcion(datosRaza.getDescripcion());
+        return razaRepository.save(raza);
+    }
+
+    public void eliminar(Long id) {
+        Raza raza = buscarPorId(id);
+        razaRepository.delete(raza);
     }
 
     public List<Perro> listarPerrosPorRaza(Long razaId) {
