@@ -1,0 +1,71 @@
+<main class="page-shell" aria-labelledby="home-title">
+  <section class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">NexoCanino</p>
+      <h1 id="home-title">Adopciones y acompanamiento canino con seguimiento claro</h1>
+      <p>
+        Conecta con perros preparados para apoyo emocional, educativo y social, con una operativa visual,
+        accesible y alineada con el panel logistico del proyecto.
+      </p>
+      <a class="primary-action" routerLink="/perros">Adopta un perro</a>
+    </div>
+
+    <article class="card hero-metric" aria-label="Resumen de perros disponibles">
+      <span>{{ disponibles() }}</span>
+      <strong>perros disponibles</strong>
+      <p>Datos sincronizados con el backend cuando esta activo.</p>
+    </article>
+  </section>
+
+  <section class="metrics-grid" aria-label="Metricas principales">
+    <article class="metric-card">
+      <p>Total de perros</p>
+      <strong>{{ perros().length }}</strong>
+      <span>catalogo actual</span>
+    </article>
+    <article class="metric-card">
+      <p>Adopciones hoy</p>
+      <strong>6</strong>
+      <span>completadas</span>
+    </article>
+    <article class="metric-card">
+      <p>Solicitudes</p>
+      <strong>14</strong>
+      <span>pendientes</span>
+    </article>
+  </section>
+
+  <section class="section-stack" aria-labelledby="featured-title">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Perros destacados</p>
+        <h2 id="featured-title">Companeros con experiencia</h2>
+      </div>
+      <a class="text-action" routerLink="/perros">Ver todos</a>
+    </div>
+
+    <div class="cards-grid">
+      @for (perro of destacados(); track perro.id) {
+        <app-perro-card [perro]="perro" />
+      }
+    </div>
+  </section>
+
+  <section class="cards-grid" aria-label="Servicios de acompanamiento">
+    <article class="card service-card">
+      <span class="status-badge is-progress">Servicio</span>
+      <h2>Acompanamiento hospitalario</h2>
+      <p>Apoyo tranquilo en procesos medicos, recuperacion y visitas programadas.</p>
+    </article>
+    <article class="card service-card">
+      <span class="status-badge is-complete">Servicio</span>
+      <h2>Apoyo a personas mayores</h2>
+      <p>Rutinas de compania, bienestar y presencia cercana para residencias y familias.</p>
+    </article>
+    <article class="card service-card">
+      <span class="status-badge is-alert">Prioritario</span>
+      <h2>Apoyo emocional educativo</h2>
+      <p>Sesiones cuidadas para centros educativos, ninos y grupos con necesidades concretas.</p>
+    </article>
+  </section>
+</main>

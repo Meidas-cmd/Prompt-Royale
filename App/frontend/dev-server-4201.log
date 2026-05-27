@@ -1,0 +1,328 @@
+
+> nexocanino-front@0.0.0 start
+> ng serve --host 127.0.0.1 --port 4201
+
+[33m>[39m Building...
+[32m√[39m Building...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m         [2m | [22m[36m30.94 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m       [2m | [22m[36m95 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m[1m31.03 kB[22m
+
+Application bundle generation complete. [1.378 seconds] - 2026-05-27T10:37:50.982Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4201[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m         [2m | [22m[36m30.94 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m       [2m | [22m[36m95 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m[1m31.03 kB[22m
+
+Application bundle generation complete. [0.007 seconds] - 2026-05-27T10:50:12.604Z
+
+Page reload sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m28.43 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.433 seconds] - 2026-05-27T10:50:13.799Z
+
+Page reload sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.249 seconds] - 2026-05-27T10:50:14.485Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'totalPerrosDestacados' does not exist on type 'AppComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:18:62:
+[37m      18 │ ...ro-number" aria-hidden="true">{{ [32mtotalPerrosDestacados[37m() }}</span>
+         ╵                                     [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:36:15:
+[37m      36 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'perrosDestacados' does not exist on type 'AppComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:34:23:
+[37m      34 │         @for (perro of [32mperrosDestacados[37m(); track perro.id) {
+         ╵                        [32m~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:36:15:
+[37m      36 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8002: Can't bind to 'queryParams' since it isn't a known property of 'a'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:79:61:
+[37m      79 │ ...ecialidades" [32m[queryParams]="{ especialidadId: 1 }"[37m aria-label="...
+         ╵                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:36:15:
+[37m      36 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8002: Can't bind to 'queryParams' since it isn't a known property of 'a'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:84:61:
+[37m      84 │ ...ecialidades" [32m[queryParams]="{ especialidadId: 2 }"[37m aria-label="...
+         ╵                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:36:15:
+[37m      36 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8002: Can't bind to 'queryParams' since it isn't a known property of 'a'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:89:61:
+[37m      89 │ ...ecialidades" [32m[queryParams]="{ especialidadId: 3 }"[37m aria-label="...
+         ╵                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:36:15:
+[37m      36 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+[39m[22m
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m         [2m | [22m[36m26.18 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m       [2m | [22m[36m95 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m[1m26.28 kB[22m
+
+Application bundle generation complete. [0.281 seconds] - 2026-05-27T10:50:15.348Z
+
+Page reload sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m         [2m | [22m[36m26.18 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m       [2m | [22m[36m95 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m[1m26.28 kB[22m
+
+Application bundle generation complete. [0.018 seconds] - 2026-05-27T10:50:15.689Z
+
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+
+No output file changes.
+
+Application bundle generation complete. [0.134 seconds] - 2026-05-27T10:50:16.388Z
+
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m         [2m | [22m[36m26.18 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m       [2m | [22m[36m95 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m[1m26.28 kB[22m
+
+Application bundle generation complete. [0.062 seconds] - 2026-05-27T10:50:16.718Z
+
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m         [2m | [22m[36m26.18 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m       [2m | [22m[36m95 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m[1m26.28 kB[22m
+
+Application bundle generation complete. [0.003 seconds] - 2026-05-27T11:11:22.420Z
+
+Page reload sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m26.26 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.155 seconds] - 2026-05-27T11:11:23.085Z
+
+Page reload sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m19.81 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.274 seconds] - 2026-05-27T11:11:23.605Z
+
+Component update sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m10.07 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.173 seconds] - 2026-05-27T11:11:24.076Z
+
+Component update sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.140 seconds] - 2026-05-27T11:11:24.566Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/home/home.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:2:30:
+[37m      2 │ import { HomeComponent } from [32m'./pages/home/home.component'[37m;
+        ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/perros/perros.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:3:32:
+[37m      3 │ import { PerrosComponent } from [32m'./pages/perros/perros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/tienda/tienda.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:4:32:
+[37m      4 │ import { TiendaComponent } from [32m'./pages/tienda/tienda.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/nosotros/nosotros.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:5:34:
+[37m      5 │ ...t { NosotrosComponent } from [32m'./pages/nosotros/nosotros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/contacto/contacto.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:6:34:
+[37m      6 │ ...t { ContactoComponent } from [32m'./pages/contacto/contacto.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/home/home.component"[0m
+
+    src/app/app.routes.ts:1:30:
+[37m      1 │ import { HomeComponent } from [32m'./pages/home/home.component'[37m;
+        ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/perros/perros.component"[0m
+
+    src/app/app.routes.ts:2:32:
+[37m      2 │ import { PerrosComponent } from [32m'./pages/perros/perros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/tienda/tienda.component"[0m
+
+    src/app/app.routes.ts:3:32:
+[37m      3 │ import { TiendaComponent } from [32m'./pages/tienda/tienda.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/nosotros/nosotros.component"[0m
+
+    src/app/app.routes.ts:4:34:
+[37m      4 │ ...t { NosotrosComponent } from [32m'./pages/nosotros/nosotros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/contacto/contacto.component"[0m
+
+    src/app/app.routes.ts:5:34:
+[37m      5 │ ...t { ContactoComponent } from [32m'./pages/contacto/contacto.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.246 seconds] - 2026-05-27T11:11:25.739Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/home/home.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:2:30:
+[37m      2 │ import { HomeComponent } from [32m'./pages/home/home.component'[37m;
+        ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/perros/perros.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:3:32:
+[37m      3 │ import { PerrosComponent } from [32m'./pages/perros/perros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/tienda/tienda.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:4:32:
+[37m      4 │ import { TiendaComponent } from [32m'./pages/tienda/tienda.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/nosotros/nosotros.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:5:34:
+[37m      5 │ ...t { NosotrosComponent } from [32m'./pages/nosotros/nosotros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/contacto/contacto.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:6:34:
+[37m      6 │ ...t { ContactoComponent } from [32m'./pages/contacto/contacto.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/home/home.component"[0m
+
+    src/app/app.routes.ts:1:30:
+[37m      1 │ import { HomeComponent } from [32m'./pages/home/home.component'[37m;
+        ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/perros/perros.component"[0m
+
+    src/app/app.routes.ts:2:32:
+[37m      2 │ import { PerrosComponent } from [32m'./pages/perros/perros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/tienda/tienda.component"[0m
+
+    src/app/app.routes.ts:3:32:
+[37m      3 │ import { TiendaComponent } from [32m'./pages/tienda/tienda.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/nosotros/nosotros.component"[0m
+
+    src/app/app.routes.ts:4:34:
+[37m      4 │ ...t { NosotrosComponent } from [32m'./pages/nosotros/nosotros.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/contacto/contacto.component"[0m
+
+    src/app/app.routes.ts:5:34:
+[37m      5 │ ...t { ContactoComponent } from [32m'./pages/contacto/contacto.component'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33m>[39m Changes detected. Rebuilding...

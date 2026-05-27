@@ -1,0 +1,16 @@
+<article class="card dog-card">
+  <img [src]="perro.foto" [alt]="perro.nombre + ', perro de raza ' + perro.raza.nombre" />
+  <div class="dog-card__body">
+    <div class="dog-card__title">
+      <div>
+        <h3>{{ perro.nombre }}</h3>
+        <p>{{ perro.raza.nombre }} · {{ perro.edad }} anos · {{ perro.tamano }}</p>
+      </div>
+      <span class="status-badge" [class.is-complete]="perro.disponible" [class.is-progress]="!perro.disponible">
+        {{ perro.disponible ? 'Activo' : 'En proceso' }}
+      </span>
+    </div>
+    <p>{{ perro.descripcion }}</p>
+    <a class="text-action" [routerLink]="['/perros', perro.id]">Ver detalle</a>
+  </div>
+</article>

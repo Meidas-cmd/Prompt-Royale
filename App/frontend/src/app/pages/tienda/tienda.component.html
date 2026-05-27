@@ -1,0 +1,55 @@
+<main class="page-shell" aria-labelledby="shop-title">
+  <section class="section-header">
+    <div>
+      <p class="eyebrow">Tienda simulada</p>
+      <h1 id="shop-title">Accesorios para perros</h1>
+      <p class="muted">Carrito cliente con Signals y checkout reactivo sin pago real.</p>
+    </div>
+  </section>
+
+  <section class="dashboard-grid">
+    <div class="cards-grid" aria-label="Catalogo de productos">
+      @for (producto of productos; track producto.id) {
+        <article class="card service-card">
+          <span class="status-badge is-complete">{{ producto.categoria }}</span>
+          <h2>{{ producto.nombre }}</h2>
+          <p>{{ producto.descripcion }}</p>
+          <strong>{{ producto.precio | currency:'EUR' }}</strong>
+          <button class="primary-action" type="button" (click)="add(producto)">Anadir</button>
+        </article>
+      }
+    </div>
+
+    <aside class="card" aria-labelledby="cart-title">
+      <p class="eyebrow">Carrito</p>
+      <h2 id="cart-title">{{ cart.count() }} articulos</h2>
+      <p class="muted">Total: <strong>{{ cart.total() | currency:'EUR' }}</strong></p>
+
+      <form class="form-stack" [formGroup]="checkoutForm" (ngSubmit)="checkout()" novalidate>
+        <label>
+          Nombre
+          <input type="text" formControlName="nombre" autocomplete="name" />
+          @if (checkoutForm.controls.nombre.touched && checkoutForm.controls.nombre.invalid) {
+            <span class="field-error">Introduce al menos 3 caracteres.</span>
+          }
+        </label>
+        <label>
+          Email
+          <input type="email" formControlName="email" autocomplete="email" />
+          @if (checkoutForm.controls.email.touched && checkoutForm.controls.email.invalid) {
+            <span class="field-error">Introduce un email valido.</span>
+          }
+        </label>
+        <label>
+          Direccion
+          <input type="text" formControlName="direccion" autocomplete="street-address" />
+          @if (checkoutForm.controls.direccion.touched && checkoutForm.controls.direccion.invalid) {
+            <span class="field-error">La direccion es obligatoria.</span>
+          }
+        </label>
+        <button class="primary-action" type="submit">Finalizar compra</button>
+        <p class="live-message" aria-live="polite">{{ checkoutMessage }}</p>
+      </form>
+    </aside>
+  </section>
+</main>

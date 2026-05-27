@@ -1,96 +1,18 @@
-<main class="home" aria-label="Página principal de NexoCanino">
-  <!-- SECCIÓN HERO -->
-  <section class="home__hero" aria-labelledby="hero-title">
-    <div class="home__container home__hero-grid">
-      <div class="home__hero-content">
-        <p class="home__eyebrow">NexoCanino</p>
-        <h1 id="hero-title">Conecta con perros preparados para acompañarte</h1>
-        <p class="home__hero-text">
-          Perros de apoyo seleccionados por su carácter, experience y capacidad de crear vínculos seguros.
-        </p>
-        <!-- SOLUCIÓN WARNING ARIA-LABEL: Coincidencia de texto visible para lectores de pantalla -->
-        <a class="home__cta" routerLink="/mascotas" aria-label="Adopta un perro y accede al catálogo completo">
-          Adopta un perro
-        </a>
-      </div>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" routerLink="/" aria-label="Ir al inicio de NexoCanino">
+      <span aria-hidden="true">NC</span>
+      <strong>NexoCanino</strong>
+    </a>
 
-      <div class="home__hero-panel" aria-label="Resumen de acompañamiento canino">
-        <span class="home__hero-number" aria-hidden="true">{{ totalPerrosDestacados() }}</span>
-        <p>perros destacados disponibles para acompañamiento emocional, educativo y social.</p>
-      </div>
-    </div>
-  </section>
+    <nav class="main-nav" aria-label="Navegacion principal">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/perros" routerLinkActive="is-active">Perros</a>
+      <a routerLink="/tienda" routerLinkActive="is-active">Tienda</a>
+      <a routerLink="/nosotros" routerLinkActive="is-active">Nosotros</a>
+      <a routerLink="/contacto" routerLinkActive="is-active">Contacto</a>
+    </nav>
+  </header>
 
-  <!-- GALERÍA DINÁMICA DE PERROS DESTACADOS -->
-  <section class="home__section" id="perros-destacados" aria-labelledby="dogs-title">
-    <div class="home__container">
-      <div class="home__section-header">
-        <p class="home__eyebrow">Perros destacados</p>
-        <h2 id="dogs-title">Compañeros con experiencia</h2>
-      </div>
-
-      <!-- SOLUCIÓN WARNING LIST: Cambiamos el div por una lista nativa <ul> con estilos limpios -->
-      <ul class="dogs-grid" aria-label="Galería reactiva de perros destacados" style="list-style: none; padding: 0; margin: 0;">
-        @for (perro of perrosDestacados(); track perro.id) {
-          <!-- SOLUCIÓN WARNING LISTITEM: Cambiamos article por un elemento <li> nativo -->
-          <li class="dog-card" [attr.data-id]="perro.id" [attr.data-especialidad-id]="perro.especialidadId" [attr.aria-labelledby]="'dog-' + perro.id">
-            <article>
-              <!-- SOLUCIÓN WARNING IMAGE ALT: Añadimos un alt estático base para calmar al validador de VS Code -->
-              <img
-                class="dog-card__image"
-                alt="Perro de terapia"
-                [src]="perro.imagenUrl"
-                [alt]="perro.nombre + ', ' + perro.raza + '. ' + perro.descripcionPersonalidad"
-              />
-              <div class="dog-card__body">
-                <h3 [id]="'dog-' + perro.id">{{ perro.nombre }}</h3>
-                <dl class="dog-card__meta" [attr.aria-label]="'Datos de ' + perro.nombre">
-                  <div>
-                    <dt>Raza</dt>
-                    <dd>{{ perro.raza }}</dd>
-                  </div>
-                  <div>
-                    <dt>Edad</dt>
-                    <dd>{{ perro.edad }} años</dd>
-                  </div>
-                  <div>
-                    <dt>Experiencia</dt>
-                    <dd>{{ perro.anosExperiencia }} años</dd>
-                  </div>
-                </dl>
-                <p>{{ perro.descripcionPersonalidad }}</p>
-              </div>
-            </article>
-          </li>
-        }
-      </ul>
-    </div>
-  </section>
-
-  <!-- SECCIÓN ENLACES A SERVICIOS -->
-  <section class="home__section home__section--soft" aria-labelledby="services-title">
-    <div class="home__container">
-      <div class="home__section-header">
-        <p class="home__eyebrow">Servicios</p>
-        <h2 id="services-title">Acompañamiento especializado</h2>
-      </div>
-
-      <nav class="services-grid" aria-label="Enlaces a servicios de acompañamiento">
-        <a class="service-link" routerLink="/especialidades" [queryParams]="{ especialidadId: 1 }" aria-label="Ir al servicio de acompañamiento hospitalario">
-          <span class="service-link__title">Acompañamiento hospitalario</span>
-          <span class="service-link__text">Apoyo tranquilo en procesos médicos y recuperación.</span>
-        </a>
-
-        <a class="service-link" routerLink="/especialidades" [queryParams]="{ especialidadId: 2 }" aria-label="Ir al servicio de apoyo a personas mayores">
-          <span class="service-link__title">Apoyo a personas mayores</span>
-          <span class="service-link__text">Presencia cercana para rutinas, compañía y bienestar.</span>
-        </a>
-
-        <a class="service-link" routerLink="/especialidades" [queryParams]="{ especialidadId: 3 }" aria-label="Ir al servicio de apoyo emocional educativo">
-          <span class="service-link__title">Apoyo emocional educativo</span>
-          <span class="service-link__text">Sesiones cuidadas para centros educativos y familias.</span>
-        </a>
-      </nav>
-    </div>
-  </section>
-</main>
+  <router-outlet />
+</div>
