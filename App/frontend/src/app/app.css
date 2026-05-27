@@ -1,12 +1,11 @@
 .app-shell {
   min-height: 100vh;
-  background: #f8f9fa;
   color: #334155;
 }
 
 .topbar {
   position: sticky;
-  top: 0;
+  top: 0.75rem;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -14,9 +13,12 @@
   gap: 1rem;
   width: min(100% - 2rem, 1200px);
   margin: 0 auto;
-  padding: 1rem 0;
-  background: rgba(248, 249, 250, 0.92);
-  backdrop-filter: blur(12px);
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(226, 232, 240, 0.82);
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(16px);
 }
 
 .brand,
@@ -29,17 +31,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-weight: 700;
+  padding-right: 0.5rem;
+  font-weight: 900;
 }
 
 .brand span {
   display: grid;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   place-items: center;
-  color: #0369a1;
-  background: #e0f2fe;
-  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0369a1, #0f766e);
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(3, 105, 161, 0.22);
   font-size: 0.875rem;
 }
 
@@ -51,17 +55,20 @@
 }
 
 .main-nav a {
-  padding: 0.625rem 0.875rem;
+  min-height: 2.4rem;
+  padding: 0.62rem 0.9rem;
   border-radius: 999px;
   color: #64748b;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.is-active {
   color: #0369a1;
   background: #e0f2fe;
+  transform: translateY(-1px);
 }
 
 .brand:focus-visible,
@@ -72,8 +79,11 @@
 
 @media (max-width: 720px) {
   .topbar {
+    top: 0;
+    width: 100%;
     align-items: flex-start;
     flex-direction: column;
+    border-radius: 0 0 18px 18px;
   }
 
   .main-nav {

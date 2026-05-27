@@ -1,45 +1,122 @@
 <main class="page-shell" aria-labelledby="dogs-title">
-  <section class="section-header">
-    <div>
-      <p class="eyebrow">Perros y servicios</p>
-      <h1 id="dogs-title">Catalogo operativo</h1>
-      <p class="muted">Filtra por raza y tamano para localizar el perro adecuado.</p>
+  <header class="page-header">
+    <div class="header-copy">
+      <p class="eyebrow">Perros & Servicios</p>
+      <h1 id="dogs-title">Catálogo operativo</h1>
+      <p class="subtitle">
+        Explora el inventario de perros disponibles, filtra por raza y tamaño, y revisa el estado de cada ficha con una lectura visual clara.
+      </p>
     </div>
+  </header>
+
+  <section class="metrics-row" aria-label="Métricas globales del sistema">
+    <article class="metric-card">
+      <div class="metric-copy">
+        <span class="metric-value">{{ totalPerros() }}</span>
+        <p class="metric-label">Perros en catálogo</p>
+        <p class="metric-note">Base total cargada</p>
+      </div>
+      <span class="metric-icon" aria-hidden="true">🐾</span>
+    </article>
+
+    <article class="metric-card">
+      <div class="metric-copy">
+        <span class="metric-value">{{ perrosActivos() }}</span>
+        <p class="metric-label">Perros activos</p>
+        <p class="metric-note">Listos para servicio</p>
+      </div>
+      <span class="metric-icon" aria-hidden="true">✓</span>
+    </article>
   </section>
 
-  @if (selectedPerro(); as perro) {
-    <section class="dashboard-grid" aria-labelledby="detail-title">
-      <article class="card detail-card">
-        <img [src]="perro.foto" [alt]="perro.nombre + ', detalle de perro disponible'" />
+  <section class="dashboard-grid" aria-label="Listado de perros y filtros">
+    <section class="dogs-column" aria-labelledby="dogs-list-title">
+      <div class="section-heading">
         <div>
-          <p class="eyebrow">Detalle</p>
-          <h2 id="detail-title">{{ perro.nombre }}</h2>
-          <p>{{ perro.descripcion }}</p>
-          <dl class="definition-grid">
-            <div><dt>Raza</dt><dd>{{ perro.raza.nombre }}</dd></div>
-            <div><dt>Edad</dt><dd>{{ perro.edad }} anos</dd></div>
-            <div><dt>Tamano</dt><dd>{{ perro.tamano }}</dd></div>
-            <div><dt>Salud</dt><dd>Revision veterinaria al dia</dd></div>
-          </dl>
-          <a class="text-action" routerLink="/perros">Volver al catalogo</a>
+          <p class="eyebrow">Listado principal</p>
+          <h2 id="dogs-list-title">Perros disponibles</h2>
         </div>
-      </article>
+        <p class="results-pill">{{ filteredPerros().length }} resultados</p>
+      </div>
+
+      <ul class="dogs-list">
+        @for (perro of filteredPerros(); track perro.id) {
+          <li class="dog-item">
+            <article class="dog-card">
+              <div class="dog-media">
+                <img [src]="perro.foto" [alt]="perro.nombre + ', fotografía del perro'" title="Fotografía del perro" />
+                <span
+                  class="status-badge"
+                  [class.is-active]="perro.disponible"
+                  [class.is-progress]="!perro.disponible"
+                >
+                  {{ perro.disponible ? 'Activo' : 'En proceso' }}
+                </span>
+              </div>
+
+              <div class="dog-body">
+                <div class="dog-heading">
+                  <div>
+                    <h3>{{ perro.nombre }}</h3>
+                    <p class="dog-breed">{{ perro.raza }}</p>
+                  </div>
+                </div>
+
+                <div class="dog-specs" aria-label="Especificaciones del perro">
+                  <div class="spec-card">
+                    <span class="spec-label">Edad</span>
+                    <strong class="spec-value">{{ perro.edad }} años</strong>
+                  </div>
+                  <div class="spec-card">
+                    <span class="spec-label">Años de experiencia</span>
+                    <strong class="spec-value">{{ perro.edad + 2 }} años</strong>
+                  </div>
+                </div>
+
+                <p class="dog-description">{{ perro.descripcion }}</p>
+              </div>
+            </article>
+          </li>
+        } @empty {
+          <li class="empty-state">
+            <p>No hay perros que coincidan con los filtros actuales.</p>
+          </li>
+        }
+      </ul>
     </section>
-  } @else {
-    <section class="dashboard-grid">
-      <article class="card records-card">
-        <div class="filters-row" aria-label="Filtros del catalogo">
-          <label>
-            Raza
+
+    <aside class="sidebar" aria-labelledby="filters-title">
+      <div class="sidebar-card">
+        <p class="eyebrow">Filtros</p>
+        <h2 id="filters-title">Buscador de raza</h2>
+        <p class="sidebar-copy">
+          Usa el buscador para localizar razas concretas y afina el resultado con los controles operativos.
+        </p>
+
+        <div class="filters-stack">
+          <label class="field">
+            <span class="field-label">Buscar raza</span>
+            <input
+              id="raza-search"
+              type="search"
+              placeholder="Ej. Golden Retriever"
+              [ngModel]="razaQuery()"
+              (ngModelChange)="razaQuery.set($event)"
+            />
+          </label>
+
+          <label class="field">
+            <span class="field-label">Raza</span>
             <select [ngModel]="selectedRaza()" (ngModelChange)="selectedRaza.set($event)">
               <option value="todas">Todas</option>
               @for (raza of razas(); track raza.id) {
-                <option [value]="raza.id">{{ raza.nombre }}</option>
+                <option [value]="raza.nombre">{{ raza.nombre }}</option>
               }
             </select>
           </label>
-          <label>
-            Tamano
+
+          <label class="field">
+            <span class="field-label">Tamaño</span>
             <select [ngModel]="selectedTamano()" (ngModelChange)="selectedTamano.set($event)">
               <option value="todos">Todos</option>
               <option value="Mediano">Mediano</option>
@@ -47,24 +124,7 @@
             </select>
           </label>
         </div>
-
-        <div class="cards-grid">
-          @for (perro of filteredPerros(); track perro.id) {
-            <app-perro-card [perro]="perro" />
-          } @empty {
-            <p class="muted">No hay perros cargados. Arranca el backend en http://localhost:8080.</p>
-          }
-        </div>
-      </article>
-
-      <aside class="card">
-        <p class="eyebrow">Servicio especifico</p>
-        <h2>Apoyo para personas ciegas</h2>
-        <p class="muted">
-          Seleccion de perros tranquilos, entrenados para presencia estable y acompanamiento en rutinas guiadas.
-        </p>
-        <span class="status-badge is-progress">En evaluacion</span>
-      </aside>
-    </section>
-  }
+      </div>
+    </aside>
+  </section>
 </main>

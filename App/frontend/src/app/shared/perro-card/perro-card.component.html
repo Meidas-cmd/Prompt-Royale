@@ -4,7 +4,7 @@
     <div class="dog-card__title">
       <div>
         <h3>{{ perro.nombre }}</h3>
-        <p>{{ perro.raza.nombre }} · {{ perro.edad }} anos · {{ perro.tamano }}</p>
+        <p>{{ perro.raza.nombre }} - {{ perro.edad }} anos - {{ perro.tamano }}</p>
       </div>
       <span class="status-badge" [class.is-complete]="perro.disponible" [class.is-progress]="!perro.disponible">
         {{ perro.disponible ? 'Activo' : 'En proceso' }}
