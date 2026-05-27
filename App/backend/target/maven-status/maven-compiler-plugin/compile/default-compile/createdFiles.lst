@@ -1,0 +1,9 @@
+com\nexocanino\backend\model\Perro.class
+com\nexocanino\backend\repository\PerroRepository.class
+com\nexocanino\backend\NexoCaninoBackendApplication.class
+com\nexocanino\backend\repository\RazaRepository.class
+com\nexocanino\backend\service\RazaService.class
+com\nexocanino\backend\model\Raza.class
+com\nexocanino\backend\controller\RazaController.class
+com\nexocanino\backend\service\PerroService.class
+com\nexocanino\backend\controller\PerroController.class
