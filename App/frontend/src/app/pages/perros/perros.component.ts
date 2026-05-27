@@ -23,7 +23,7 @@ export class PerrosComponent implements OnInit {
     const query = this.razaQuery().trim().toLowerCase();
 
     return this.perros().filter((perro) => {
-      const razaTexto = String(perro.raza).trim().toLowerCase();
+      const razaTexto = perro.raza.nombre.trim().toLowerCase();
       const razaMatch = selectedRaza === 'todas' || razaTexto === selectedRaza;
       const tamanoMatch = selectedTamano === 'todos' || perro.tamano === selectedTamano;
       const queryMatch = query.length === 0 || razaTexto.includes(query);

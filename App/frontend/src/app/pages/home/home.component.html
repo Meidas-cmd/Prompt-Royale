@@ -38,19 +38,30 @@
 
   <section class="metrics-grid" aria-label="Metricas principales">
     <article class="metric-card">
-      <p>Total de perros</p>
-      <strong>{{ perros().length }}</strong>
-      <span>catalogo actual</span>
+      <div class="metric-card__copy">
+        <p>Total de perros</p>
+        <strong>{{ perros().length }}</strong>
+        <span>catalogo actual</span>
+      </div>
+      <span class="metric-card__icon metric-card__icon--blue" aria-hidden="true">🐾</span>
     </article>
+
     <article class="metric-card">
-      <p>Adopciones hoy</p>
-      <strong>6</strong>
-      <span>completadas</span>
+      <div class="metric-card__copy">
+        <p>Adopciones hoy</p>
+        <strong>6</strong>
+        <span>completadas</span>
+      </div>
+      <span class="metric-card__icon metric-card__icon--green" aria-hidden="true">✓</span>
     </article>
+
     <article class="metric-card">
-      <p>Solicitudes</p>
-      <strong>14</strong>
-      <span>pendientes</span>
+      <div class="metric-card__copy">
+        <p>Solicitudes</p>
+        <strong>14</strong>
+        <span>pendientes</span>
+      </div>
+      <span class="metric-card__icon metric-card__icon--red" aria-hidden="true">⏱</span>
     </article>
   </section>
 
