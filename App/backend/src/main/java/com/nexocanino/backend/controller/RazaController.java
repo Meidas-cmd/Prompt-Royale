@@ -5,11 +5,8 @@ import com.nexocanino.backend.model.Raza;
 import com.nexocanino.backend.service.RazaService;
 import java.net.URI;
 import java.util.List;
-<<<<<<< HEAD
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-=======
->>>>>>> e039a34c8d0bdd8e02aab4f8b8b3ef393496103e
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;

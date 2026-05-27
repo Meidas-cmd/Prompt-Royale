@@ -1,25 +1,25 @@
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\config\DataInitializer.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\config\SecurityConfig.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\config\SpringDataWebConfig.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\controller\AuthController.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\controller\PerroController.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\controller\RazaController.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\controller\UsuarioController.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\dto\AuthResponse.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\dto\LoginRequest.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\dto\RegistroRequest.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\dto\UsuarioResponse.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\model\Perro.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\model\Raza.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\model\Rol.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\model\Usuario.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\NexoCaninoBackendApplication.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\repository\PerroRepository.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\repository\RazaRepository.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\repository\UsuarioRepository.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\security\JwtAuthenticationFilter.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\security\JwtService.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\service\AuthService.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\service\PerroService.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\service\RazaService.java
-C:\Users\Usuario\Documents\Prompt Royale\App\backend\src\main\java\com\nexocanino\backend\service\UsuarioService.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\config\DataInitializer.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\config\SecurityConfig.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\config\SpringDataWebConfig.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\controller\AuthController.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\controller\PerroController.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\controller\RazaController.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\controller\UsuarioController.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\dto\AuthResponse.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\dto\LoginRequest.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\dto\RegistroRequest.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\dto\UsuarioResponse.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\model\Perro.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\model\Raza.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\model\Rol.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\model\Usuario.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\NexoCaninoBackendApplication.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\repository\PerroRepository.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\repository\RazaRepository.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\repository\UsuarioRepository.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\security\JwtAuthenticationFilter.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\security\JwtService.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\service\AuthService.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\service\PerroService.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\service\RazaService.java
+C:\Users\Nitropc\Desktop\nexo-canino\Prompt-Royale\App\backend\src\main\java\com\nexocanino\backend\service\UsuarioService.java

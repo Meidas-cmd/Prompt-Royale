@@ -1,59 +1,106 @@
-# NexocaninoFront
+# NexoCanino Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
+Aplicacion Angular 21 standalone para el MVP de NexoCanino. Consume el backend Spring Boot en `http://localhost:8080/api`.
 
-## Development server
+## Requisitos
 
-To start a local development server, run:
+- Node.js compatible con Angular 21.
+- npm instalado.
+- Java 17 o superior para ejecutar el backend.
 
-```bash
-ng serve
-```
+## Arrancar el backend
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Desde la carpeta del backend:
 
 ```bash
-ng generate component component-name
+cd App/backend
+.\mvnw.cmd spring-boot:run
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+El backend debe quedar disponible en:
+
+```text
+http://localhost:8080
+```
+
+Endpoints utiles:
+
+```text
+GET http://localhost:8080/api/perros
+GET http://localhost:8080/api/razas
+```
+
+La consola H2 esta disponible en:
+
+```text
+http://localhost:8080/h2-console
+```
+
+Datos H2:
+
+```text
+JDBC URL: jdbc:h2:mem:nexocanino
+User: sa
+Password: dejar vacio
+```
+
+## Arrancar el frontend
+
+Desde la carpeta del frontend:
 
 ```bash
-ng generate --help
+cd App/frontend
+npm install
+npm.cmd start
 ```
 
-## Building
+Por defecto Angular intenta usar:
 
-To build the project run:
+```text
+http://localhost:4200
+```
+
+Si el puerto `4200` esta ocupado, usa otro puerto:
 
 ```bash
-ng build
+npm.cmd start -- --host 127.0.0.1 --port 4201
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+En ese caso abre:
 
-## Running unit tests
+```text
+http://127.0.0.1:4201
+```
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Compilar
 
 ```bash
-ng test
+cd App/frontend
+npm.cmd run build
 ```
 
-## Running end-to-end tests
+La salida se genera en:
 
-For end-to-end (e2e) testing, run:
+```text
+App/frontend/dist/nexocanino-front
+```
+
+## Tests frontend
 
 ```bash
-ng e2e
+cd App/frontend
+npm.cmd test -- --watch=false
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Tests backend
 
-## Additional Resources
+```bash
+cd App/backend
+.\mvnw.cmd test
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Notas
+
+- El frontend espera el backend en `http://localhost:8080/api`.
+- Si no ves cambios recientes en el navegador, recarga con `Ctrl + F5` o reinicia `ng serve`.
+- En PowerShell puede fallar `npm` por la politica de ejecucion de scripts; usa `npm.cmd`.
