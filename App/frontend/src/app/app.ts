@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core'; // Añadido computed para la reactividad
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -17,11 +17,12 @@ export interface Mascota {
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './app.html',  // <-- Apunta exactamente a tu archivo app.html
-  styleUrls: ['./app.css']    // <-- Apunta exactamente a tu archivo app.css
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
 })
 export class AppComponent {
-  public perrosDestacados = signal<Mascota[]>([
+  // Ajustado a readonly para cumplir con las buenas prácticas de inmutabilidad del estado
+  public readonly perrosDestacados = signal<readonly Mascota[]>([
     {
       id: 1,
       especialidadId: 1,
@@ -53,4 +54,7 @@ export class AppComponent {
       imagenUrl: 'assets/images/perros/nala.jpg'
     }
   ]);
+
+  // Skill ejecutada (angular-moderno.md): Estado derivado reactivo para el Hero
+  public readonly totalPerrosDestacados = computed(() => this.perrosDestacados().length);
 }

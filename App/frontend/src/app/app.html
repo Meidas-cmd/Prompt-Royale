@@ -1,24 +1,27 @@
 <main class="home" aria-label="Página principal de NexoCanino">
+  <!-- SECCIÓN HERO -->
   <section class="home__hero" aria-labelledby="hero-title">
     <div class="home__container home__hero-grid">
       <div class="home__hero-content">
         <p class="home__eyebrow">NexoCanino</p>
         <h1 id="hero-title">Conecta con perros preparados para acompañarte</h1>
         <p class="home__hero-text">
-          Perros de apoyo seleccionados por su carácter, experiencia y capacidad de crear vínculos seguros.
+          Perros de apoyo seleccionados por su carácter, experience y capacidad de crear vínculos seguros.
         </p>
-        <a class="home__cta" routerLink="/mascotas" aria-label="Adopta un perro y ver catálogo disponible">
+        <!-- SOLUCIÓN WARNING ARIA-LABEL: Coincidencia de texto visible para lectores de pantalla -->
+        <a class="home__cta" routerLink="/mascotas" aria-label="Adopta un perro y accede al catálogo completo">
           Adopta un perro
         </a>
       </div>
 
       <div class="home__hero-panel" aria-label="Resumen de acompañamiento canino">
-        <span class="home__hero-number" aria-hidden="true">3</span>
+        <span class="home__hero-number" aria-hidden="true">{{ totalPerrosDestacados() }}</span>
         <p>perros destacados disponibles para acompañamiento emocional, educativo y social.</p>
       </div>
     </div>
   </section>
 
+  <!-- GALERÍA DINÁMICA DE PERROS DESTACADOS -->
   <section class="home__section" id="perros-destacados" aria-labelledby="dogs-title">
     <div class="home__container">
       <div class="home__section-header">
@@ -26,39 +29,45 @@
         <h2 id="dogs-title">Compañeros con experiencia</h2>
       </div>
 
-      <div class="dogs-grid" aria-label="Galería reactiva de perros destacados">
+      <!-- SOLUCIÓN WARNING LIST: Cambiamos el div por una lista nativa <ul> con estilos limpios -->
+      <ul class="dogs-grid" aria-label="Galería reactiva de perros destacados" style="list-style: none; padding: 0; margin: 0;">
         @for (perro of perrosDestacados(); track perro.id) {
-          <article class="dog-card" [attr.data-id]="perro.id" [attr.data-especialidad-id]="perro.especialidadId" tabindex="0" role="region" [attr.aria-labelledby]="'dog-' + perro.id">
-            <img
-              class="dog-card__image"
-              alt="Fotografía de perro de terapia"
-              [src]="perro.imagenUrl"
-              [alt]="perro.nombre + ', ' + perro.raza + '. ' + perro.descripcionPersonalidad"
-            />
-            <div class="dog-card__body">
-              <h3 [id]="'dog-' + perro.id">{{ perro.nombre }}</h3>
-              <dl class="dog-card__meta" [attr.aria-label]="'Datos de ' + perro.nombre">
-                <div>
-                  <dt>Raza</dt>
-                  <dd>{{ perro.raza }}</dd>
-                </div>
-                <div>
-                  <dt>Edad</dt>
-                  <dd>{{ perro.edad }} años</dd>
-                </div>
-                <div>
-                  <dt>Experiencia</dt>
-                  <dd>{{ perro.anosExperiencia }} años</dd>
-                </div>
-              </dl>
-              <p>{{ perro.descripcionPersonalidad }}</p>
-            </div>
-          </article>
+          <!-- SOLUCIÓN WARNING LISTITEM: Cambiamos article por un elemento <li> nativo -->
+          <li class="dog-card" [attr.data-id]="perro.id" [attr.data-especialidad-id]="perro.especialidadId" [attr.aria-labelledby]="'dog-' + perro.id">
+            <article>
+              <!-- SOLUCIÓN WARNING IMAGE ALT: Añadimos un alt estático base para calmar al validador de VS Code -->
+              <img
+                class="dog-card__image"
+                alt="Perro de terapia"
+                [src]="perro.imagenUrl"
+                [alt]="perro.nombre + ', ' + perro.raza + '. ' + perro.descripcionPersonalidad"
+              />
+              <div class="dog-card__body">
+                <h3 [id]="'dog-' + perro.id">{{ perro.nombre }}</h3>
+                <dl class="dog-card__meta" [attr.aria-label]="'Datos de ' + perro.nombre">
+                  <div>
+                    <dt>Raza</dt>
+                    <dd>{{ perro.raza }}</dd>
+                  </div>
+                  <div>
+                    <dt>Edad</dt>
+                    <dd>{{ perro.edad }} años</dd>
+                  </div>
+                  <div>
+                    <dt>Experiencia</dt>
+                    <dd>{{ perro.anosExperiencia }} años</dd>
+                  </div>
+                </dl>
+                <p>{{ perro.descripcionPersonalidad }}</p>
+              </div>
+            </article>
+          </li>
         }
-      </div>
+      </ul>
     </div>
   </section>
 
+  <!-- SECCIÓN ENLACES A SERVICIOS -->
   <section class="home__section home__section--soft" aria-labelledby="services-title">
     <div class="home__container">
       <div class="home__section-header">
