@@ -1,4 +1,4 @@
-# NexoCanino Frontend
+# NexoCanino instrucciones
 
 Aplicacion Angular 21 standalone para el MVP de NexoCanino. Consume el backend Spring Boot en `http://localhost:8080/api`.
 
@@ -14,7 +14,7 @@ Desde la carpeta del backend:
 
 ```bash
 cd App/backend
-.\mvnw.cmd spring-boot:run
+./mvnw.cmd spring-boot:run
 ```
 
 El backend debe quedar disponible en:
