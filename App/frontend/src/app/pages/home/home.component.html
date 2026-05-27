@@ -10,10 +10,29 @@
       <a class="primary-action" routerLink="/perros">Adopta un perro</a>
     </div>
 
-    <article class="card hero-metric" aria-label="Resumen de perros disponibles">
-      <span>{{ disponibles() }}</span>
-      <strong>perros disponibles</strong>
-      <p>Datos sincronizados con el backend cuando esta activo.</p>
+    <article class="card hero-panel" aria-label="Resumen de perros disponibles">
+      <div class="hero-panel__media">
+        <img
+          src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=80"
+          alt="Perro de terapia en un entorno tranquilo"
+        />
+      </div>
+      <div class="hero-panel__content">
+        <p class="eyebrow">Disponibilidad</p>
+        <span>{{ disponibles() }}</span>
+        <strong>perros activos</strong>
+        <p>Datos sincronizados con el backend cuando esta activo.</p>
+        <div class="hero-panel__stats" aria-label="Resumen rapido">
+          <div class="hero-panel__stat">
+            <strong>{{ perros().length }}</strong>
+            <span>catalogo</span>
+          </div>
+          <div class="hero-panel__stat">
+            <strong>24h</strong>
+            <span>respuesta</span>
+          </div>
+        </div>
+      </div>
     </article>
   </section>
 
