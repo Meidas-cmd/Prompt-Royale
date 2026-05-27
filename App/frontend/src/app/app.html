@@ -1,5 +1,4 @@
 <main class="home" aria-label="Página principal de NexoCanino">
-  <!-- SECCIÓN HERO -->
   <section class="home__hero" aria-labelledby="hero-title">
     <div class="home__container home__hero-grid">
       <div class="home__hero-content">
@@ -8,7 +7,7 @@
         <p class="home__hero-text">
           Perros de apoyo seleccionados por su carácter, experiencia y capacidad de crear vínculos seguros.
         </p>
-        <a class="home__cta" href="#perros-destacados" aria-label="Ver perros destacados para adoptar">
+        <a class="home__cta" routerLink="/mascotas" aria-label="Adopta un perro y ver catálogo disponible">
           Adopta un perro
         </a>
       </div>
@@ -20,7 +19,6 @@
     </div>
   </section>
 
-  <!-- GALERÍA DE PERROS DESTACADOS -->
   <section class="home__section" id="perros-destacados" aria-labelledby="dogs-title">
     <div class="home__container">
       <div class="home__section-header">
@@ -28,92 +26,39 @@
         <h2 id="dogs-title">Compañeros con experiencia</h2>
       </div>
 
-      <div class="dogs-grid" aria-label="Galería estática de perros destacados">
-        <!-- Perro 1: Luna -->
-        <article class="dog-card" data-id="1" data-especialidad-id="1" tabindex="0" aria-labelledby="dog-luna">
-          <img
-            class="dog-card__image"
-            src="assets/images/perros/luna.jpg"
-            alt="Luna, Golden Retriever tranquila y paciente"
-          />
-          <div class="dog-card__body">
-            <h3 id="dog-luna">Luna</h3>
-            <dl class="dog-card__meta" aria-label="Datos de Luna">
-              <div>
-                <dt>Raza</dt>
-                <dd>Golden Retriever</dd>
-              </div>
-              <div>
-                <dt>Edad</dt>
-                <dd>5 años</dd>
-              </div>
-              <div>
-                <dt>Experiencia</dt>
-                <dd>3 años</dd>
-              </div>
-            </dl>
-            <p>Tranquila, paciente y especialmente cuidadosa en entornos hospitalarios.</p>
-          </div>
-        </article>
-
-        <!-- Perro 2: Bruno -->
-        <article class="dog-card" data-id="2" data-especialidad-id="2" tabindex="0" aria-labelledby="dog-bruno">
-          <img
-            class="dog-card__image"
-            src="assets/images/perros/bruno.jpg"
-            alt="Bruno, Labrador Retriever sociable y atento"
-          />
-          <div class="dog-card__body">
-            <h3 id="dog-bruno">Bruno</h3>
-            <dl class="dog-card__meta" aria-label="Datos de Bruno">
-              <div>
-                <dt>Raza</dt>
-                <dd>Labrador Retriever</dd>
-              </div>
-              <div>
-                <dt>Edad</dt>
-                <dd>4 años</dd>
-              </div>
-              <div>
-                <dt>Experiencia</dt>
-                <dd>2 años</dd>
-              </div>
-            </dl>
-            <p>Sociable, atento y muy receptivo con personas mayores.</p>
-          </div>
-        </article>
-
-        <!-- Perro 3: Nala -->
-        <article class="dog-card" data-id="3" data-especialidad-id="3" tabindex="0" aria-labelledby="dog-nala">
-          <img
-            class="dog-card__image"
-            src="assets/images/perros/nala.jpg"
-            alt="Nala, Border Collie activa e inteligente"
-          />
-          <div class="dog-card__body">
-            <h3 id="dog-nala">Nala</h3>
-            <dl class="dog-card__meta" aria-label="Datos de Nala">
-              <div>
-                <dt>Raza</dt>
-                <dd>Border Collie</dd>
-              </div>
-              <div>
-                <dt>Edad</dt>
-                <dd>6 años</dd>
-              </div>
-              <div>
-                <dt>Experiencia</dt>
-                <dd>4 años</dd>
-              </div>
-            </dl>
-            <p>Activa, inteligente y cercana en sesiones de apoyo emocional.</p>
-          </div>
-        </article>
+      <div class="dogs-grid" aria-label="Galería reactiva de perros destacados">
+        @for (perro of perrosDestacados(); track perro.id) {
+          <article class="dog-card" [attr.data-id]="perro.id" [attr.data-especialidad-id]="perro.especialidadId" tabindex="0" role="region" [attr.aria-labelledby]="'dog-' + perro.id">
+            <img
+              class="dog-card__image"
+              alt="Fotografía de perro de terapia"
+              [src]="perro.imagenUrl"
+              [alt]="perro.nombre + ', ' + perro.raza + '. ' + perro.descripcionPersonalidad"
+            />
+            <div class="dog-card__body">
+              <h3 [id]="'dog-' + perro.id">{{ perro.nombre }}</h3>
+              <dl class="dog-card__meta" [attr.aria-label]="'Datos de ' + perro.nombre">
+                <div>
+                  <dt>Raza</dt>
+                  <dd>{{ perro.raza }}</dd>
+                </div>
+                <div>
+                  <dt>Edad</dt>
+                  <dd>{{ perro.edad }} años</dd>
+                </div>
+                <div>
+                  <dt>Experiencia</dt>
+                  <dd>{{ perro.anosExperiencia }} años</dd>
+                </div>
+              </dl>
+              <p>{{ perro.descripcionPersonalidad }}</p>
+            </div>
+          </article>
+        }
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN ENLACES A SERVICIOS -->
   <section class="home__section home__section--soft" aria-labelledby="services-title">
     <div class="home__container">
       <div class="home__section-header">
@@ -122,17 +67,17 @@
       </div>
 
       <nav class="services-grid" aria-label="Enlaces a servicios de acompañamiento">
-        <a class="service-link" href="#acompanamiento-hospitalario" aria-label="Ir al servicio de acompañamiento hospitalario">
+        <a class="service-link" routerLink="/especialidades" [queryParams]="{ especialidadId: 1 }" aria-label="Ir al servicio de acompañamiento hospitalario">
           <span class="service-link__title">Acompañamiento hospitalario</span>
           <span class="service-link__text">Apoyo tranquilo en procesos médicos y recuperación.</span>
         </a>
 
-        <a class="service-link" href="#personas-mayores" aria-label="Ir al servicio de apoyo a personas mayores">
+        <a class="service-link" routerLink="/especialidades" [queryParams]="{ especialidadId: 2 }" aria-label="Ir al servicio de apoyo a personas mayores">
           <span class="service-link__title">Apoyo a personas mayores</span>
           <span class="service-link__text">Presencia cercana para rutinas, compañía y bienestar.</span>
         </a>
 
-        <a class="service-link" href="#apoyo-educativo" aria-label="Ir al servicio de apoyo emocional educativo">
+        <a class="service-link" routerLink="/especialidades" [queryParams]="{ especialidadId: 3 }" aria-label="Ir al servicio de apoyo emocional educativo">
           <span class="service-link__title">Apoyo emocional educativo</span>
           <span class="service-link__text">Sesiones cuidadas para centros educativos y familias.</span>
         </a>
