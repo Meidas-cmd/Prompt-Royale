@@ -11,21 +11,21 @@
 
   <section class="metrics-row" aria-label="Métricas globales del sistema">
     <article class="metric-card">
-      <div class="metric-copy">
-        <span class="metric-value">{{ totalPerros() }}</span>
-        <p class="metric-label">Perros en catálogo</p>
-        <p class="metric-note">Base total cargada</p>
+      <div class="metric-card__copy">
+        <p>Perros en catálogo</p>
+        <strong>{{ totalPerros() }}</strong>
+        <span>Base total cargada</span>
       </div>
-      <span class="metric-icon" aria-hidden="true">🐾</span>
+      <span class="metric-card__icon metric-card__icon--blue" aria-hidden="true">🐾</span>
     </article>
 
     <article class="metric-card">
-      <div class="metric-copy">
-        <span class="metric-value">{{ perrosActivos() }}</span>
-        <p class="metric-label">Perros activos</p>
-        <p class="metric-note">Listos para servicio</p>
+      <div class="metric-card__copy">
+        <p>Perros activos</p>
+        <strong>{{ perrosActivos() }}</strong>
+        <span>Listos para servicio</span>
       </div>
-      <span class="metric-icon" aria-hidden="true">✓</span>
+      <span class="metric-card__icon metric-card__icon--green" aria-hidden="true">✓</span>
     </article>
   </section>
 
@@ -68,8 +68,8 @@
                     <strong class="spec-value">{{ perro.edad }} años</strong>
                   </div>
                   <div class="spec-card">
-                    <span class="spec-label">Años de experiencia</span>
-                    <strong class="spec-value">{{ perro.edad + 2 }} años</strong>
+                    <span class="spec-label">Experiencia</span>
+                    <strong class="spec-value">{{ perro.edad - 2 }} años</strong>
                   </div>
                 </div>
 

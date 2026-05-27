@@ -48,6 +48,7 @@ body::before {
     linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
   background-size: 44px 44px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 75%);
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 75%);
 }
 
@@ -83,7 +84,7 @@ textarea:focus-visible,
 .dashboard-grid {
   display: grid;
   grid-template-columns: minmax(0, 2.25fr) minmax(280px, 0.95fr);
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -179,6 +180,7 @@ textarea:focus-visible,
 
 .card {
   padding: 1.5rem;
+  overflow: hidden;
 }
 
 .card,
@@ -199,12 +201,16 @@ textarea:focus-visible,
 .cards-grid,
 .product-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .metrics-grid,
 .cards-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.featured-cards {
+  gap: 2.5rem;
 }
 
 .product-grid {
@@ -217,31 +223,21 @@ textarea:focus-visible,
 
 .metric-card {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
   min-height: 160px;
   padding: 1.5rem;
   overflow: hidden;
 }
 
 .metric-card::after {
-  position: absolute;
-  inset: 1.15rem 1.15rem auto auto;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  background: var(--blue-soft);
-  content: "";
-}
-
-.metric-card:nth-child(2)::after {
-  background: var(--green-soft);
-}
-
-.metric-card:nth-child(3)::after {
-  background: var(--red-soft);
+  content: none;
 }
 
 .metric-card p {
-  margin: 0 0 1rem;
+  margin: 0 0 0.55rem;
   color: var(--muted);
   font-weight: 800;
 }
@@ -250,7 +246,7 @@ textarea:focus-visible,
 .hero-panel span {
   display: block;
   color: var(--text);
-  font-size: 2.45rem;
+  font-size: 2.25rem;
   font-weight: 900;
   line-height: 1;
 }
@@ -259,8 +255,43 @@ textarea:focus-visible,
 .hero-panel p,
 .hero-panel__stat span {
   display: block;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   color: var(--soft);
+}
+
+.metric-card__copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.metric-card__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+.metric-card__icon--blue {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.metric-card__icon--green {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.metric-card__icon--red {
+  background: var(--red-soft);
+  color: var(--red);
 }
 
 .hero-panel {
@@ -288,33 +319,56 @@ textarea:focus-visible,
 
 .hero-panel__content {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.4rem;
   padding: 0 0.25rem 0.25rem;
+}
+
+.hero-panel__content > span {
+  font-size: clamp(0.95rem, 1.2vw, 1rem);
+  line-height: 1.2;
+}
+
+.hero-panel__content > strong {
+  color: var(--text);
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  line-height: 1.15;
+}
+
+.hero-panel__content > p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .hero-panel__stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 0.9rem;
   margin-top: 0.5rem;
 }
 
 .hero-panel__stat {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
   padding: 0.85rem 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #f8fafc;
 }
 
 .hero-panel__stat strong {
   display: block;
   color: var(--text);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.15;
 }
 
 .hero-panel__stat span {
-  margin-top: 0.45rem;
+  margin-top: 0;
+  color: var(--soft);
+  font-size: 0.88rem;
+  line-height: 1.35;
 }
 
 .primary-action,
@@ -418,7 +472,7 @@ textarea:focus-visible,
 .shop-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
   min-height: 320px;
   margin-bottom: 1.5rem;
@@ -476,6 +530,7 @@ textarea:focus-visible,
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 900;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
