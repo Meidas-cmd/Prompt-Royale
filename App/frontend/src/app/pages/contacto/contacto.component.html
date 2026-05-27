@@ -1,0 +1,68 @@
+<main class="page-shell" aria-labelledby="contact-title">
+  <section class="dashboard-grid">
+    <article class="card">
+      <p class="eyebrow">Contacto</p>
+      <h1 id="contact-title">Solicitud de servicio</h1>
+      <p class="muted">Formulario reactivo alineado con el modelo SolicitudDTO del contrato.</p>
+
+      <form class="form-stack" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <label>
+          Tipo de formulario
+          <select formControlName="tipoFormulario">
+            <option value="SOLICITUD_SERVICIO">Solicitud de servicio</option>
+            <option value="VOLUNTARIADO">Voluntariado</option>
+          </select>
+        </label>
+        <label>
+          Nombre de contacto
+          <input type="text" formControlName="nombreContacto" autocomplete="name" />
+          @if (form.controls.nombreContacto.touched && form.controls.nombreContacto.invalid) {
+            <span class="field-error">El nombre debe tener al menos 3 caracteres.</span>
+          }
+        </label>
+        <label>
+          Email
+          <input type="email" formControlName="email" autocomplete="email" />
+          @if (form.controls.email.touched && form.controls.email.invalid) {
+            <span class="field-error">Introduce un email valido.</span>
+          }
+        </label>
+        <label>
+          Telefono
+          <input type="tel" formControlName="telefono" autocomplete="tel" />
+          @if (form.controls.telefono.touched && form.controls.telefono.invalid) {
+            <span class="field-error">Introduce un telefono valido.</span>
+          }
+        </label>
+        <label>
+          Tipo de servicio
+          <select formControlName="tipoServicio">
+            <option>Acompanamiento hospitalario</option>
+            <option>Apoyo a personas mayores</option>
+            <option>Apoyo emocional educativo</option>
+            <option>Voluntariado</option>
+          </select>
+        </label>
+        <label>
+          Mensaje
+          <textarea rows="5" formControlName="mensaje"></textarea>
+          @if (form.controls.mensaje.touched && form.controls.mensaje.invalid) {
+            <span class="field-error">El mensaje debe tener al menos 10 caracteres.</span>
+          }
+        </label>
+        <button class="primary-action" type="submit">Enviar solicitud</button>
+        <p class="live-message" aria-live="polite">{{ statusMessage }}</p>
+      </form>
+    </article>
+
+    <aside class="card">
+      <p class="eyebrow">Resumen</p>
+      <h2>Canales activos</h2>
+      <dl class="definition-grid">
+        <div><dt>Respuesta</dt><dd>24-48 h</dd></div>
+        <div><dt>Prioridad</dt><dd>Casos urgentes</dd></div>
+        <div><dt>Seguimiento</dt><dd>Por email y telefono</dd></div>
+      </dl>
+    </aside>
+  </section>
+</main>

@@ -1,0 +1,70 @@
+<main class="page-shell" aria-labelledby="dogs-title">
+  <section class="section-header">
+    <div>
+      <p class="eyebrow">Perros y servicios</p>
+      <h1 id="dogs-title">Catalogo operativo</h1>
+      <p class="muted">Filtra por raza y tamano para localizar el perro adecuado.</p>
+    </div>
+  </section>
+
+  @if (selectedPerro(); as perro) {
+    <section class="dashboard-grid" aria-labelledby="detail-title">
+      <article class="card detail-card">
+        <img [src]="perro.foto" [alt]="perro.nombre + ', detalle de perro disponible'" />
+        <div>
+          <p class="eyebrow">Detalle</p>
+          <h2 id="detail-title">{{ perro.nombre }}</h2>
+          <p>{{ perro.descripcion }}</p>
+          <dl class="definition-grid">
+            <div><dt>Raza</dt><dd>{{ perro.raza.nombre }}</dd></div>
+            <div><dt>Edad</dt><dd>{{ perro.edad }} anos</dd></div>
+            <div><dt>Tamano</dt><dd>{{ perro.tamano }}</dd></div>
+            <div><dt>Salud</dt><dd>Revision veterinaria al dia</dd></div>
+          </dl>
+          <a class="text-action" routerLink="/perros">Volver al catalogo</a>
+        </div>
+      </article>
+    </section>
+  } @else {
+    <section class="dashboard-grid">
+      <article class="card records-card">
+        <div class="filters-row" aria-label="Filtros del catalogo">
+          <label>
+            Raza
+            <select [ngModel]="selectedRaza()" (ngModelChange)="selectedRaza.set($event)">
+              <option value="todas">Todas</option>
+              @for (raza of razas(); track raza.id) {
+                <option [value]="raza.id">{{ raza.nombre }}</option>
+              }
+            </select>
+          </label>
+          <label>
+            Tamano
+            <select [ngModel]="selectedTamano()" (ngModelChange)="selectedTamano.set($event)">
+              <option value="todos">Todos</option>
+              <option value="Mediano">Mediano</option>
+              <option value="Grande">Grande</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="cards-grid">
+          @for (perro of filteredPerros(); track perro.id) {
+            <app-perro-card [perro]="perro" />
+          } @empty {
+            <p class="muted">No hay perros cargados. Arranca el backend en http://localhost:8080.</p>
+          }
+        </div>
+      </article>
+
+      <aside class="card">
+        <p class="eyebrow">Servicio especifico</p>
+        <h2>Apoyo para personas ciegas</h2>
+        <p class="muted">
+          Seleccion de perros tranquilos, entrenados para presencia estable y acompanamiento en rutinas guiadas.
+        </p>
+        <span class="status-badge is-progress">En evaluacion</span>
+      </aside>
+    </section>
+  }
+</main>
