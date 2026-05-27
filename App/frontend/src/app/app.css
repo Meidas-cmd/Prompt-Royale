@@ -1,0 +1,256 @@
+/* --- Base de la Vista --- */
+.home {
+  color: #183232;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home__container {
+  width: min(100% - 32px, 1200px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Estilos Sección Hero --- */
+.home__hero {
+  padding: 72px 0;
+  background: #eefafa;
+}
+
+.home__hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.home__eyebrow {
+  margin: 0 0 12px;
+  color: #1eb7b7; /* Color Teal de identidad */
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.home__hero h1,
+.home__section-header h2 {
+  margin: 0;
+  color: #102525;
+  line-height: 1.1;
+}
+
+.home__hero h1 {
+  max-width: 720px;
+  font-size: clamp(2.25rem, 5vw, 4.75rem);
+}
+
+.home__hero-text {
+  max-width: 620px;
+  margin: 20px 0 28px;
+  color: #385757;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+/* --- Botón Principal Teal Oficial --- */
+.home__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  color: #ffffff;
+  background: #1eb7b7; /* Teal Oficial NexoCanino */
+  border: 2px solid #1eb7b7;
+  border-radius: 8px; /* Redondeado estricto */
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.home__cta:hover {
+  background: #179e9e;
+  border-color: #179e9e;
+}
+
+/* --- Panel Lateral del Hero --- */
+.home__hero-panel {
+  padding: 28px;
+  background: #ffffff;
+  border-top: 4px solid #d4af37; /* Acento Dorado Superior */
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(16, 37, 37, 0.12);
+}
+
+.home__hero-number {
+  display: block;
+  color: #1eb7b7; /* Teal Oficial */
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.home__hero-panel p {
+  margin: 12px 0 0;
+  color: #385757;
+  line-height: 1.6;
+}
+
+/* --- Estructuras de Secciones --- */
+.home__section {
+  padding: 72px 0;
+}
+
+.home__section--soft {
+  background: #f7fbfb;
+}
+
+.home__section-header {
+  margin-bottom: 28px;
+}
+
+.home__section-header h2 {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+}
+
+/* --- Cuadrículas Simétricas con CSS Grid --- */
+.dogs-grid,
+.services-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.dogs-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* --- Tarjetas de Perros --- */
+.dog-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d8e7e7;
+  border-top: 4px solid #d4af37; /* Borde Superior Dorado estricto */
+  border-radius: 8px; /* Esquinas de 8px */
+  box-shadow: 0 12px 28px rgba(16, 37, 37, 0.08);
+}
+
+.dog-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #d8e7e7;
+}
+
+.dog-card__body {
+  padding: 22px;
+}
+
+.dog-card h3 {
+  margin: 0 0 16px;
+  color: #102525;
+  font-size: 1.5rem;
+}
+
+.dog-card__meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.dog-card__meta div {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.dog-card__meta dt {
+  color: #385757;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.dog-card__meta dd {
+  margin: 0;
+  color: #102525;
+}
+
+.dog-card p {
+  margin: 0;
+  color: #385757;
+  line-height: 1.6;
+}
+
+/* --- Enlaces de Servicios --- */
+.services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-link {
+  display: grid;
+  gap: 10px;
+  min-height: 160px;
+  padding: 24px;
+  color: #183232;
+  background: #ffffff;
+  border: 1px solid #d8e7e7;
+  border-top: 4px solid #d4af37; /* Borde superior dorado */
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-link:hover {
+  border-color: #1eb7b7; /* Cambio a Teal al pasar el cursor */
+  box-shadow: 0 12px 28px rgba(16, 37, 37, 0.1);
+}
+
+.service-link__title {
+  color: #102525;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.service-link__text {
+  color: #385757;
+  line-height: 1.6;
+}
+
+/* --- Foco Accesible por Teclado --- */
+.home__cta:focus-visible,
+.dog-card:focus-visible,
+.service-link:focus-visible {
+  outline: 3px solid #102525;
+  outline-offset: 4px;
+}
+
+/* --- Media Queries Responsivas Estrictas --- */
+@media (max-width: 900px) {
+  .home__hero-grid,
+  .dogs-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .home__hero, .home__section {
+    padding: 56px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .home__container {
+    width: min(100% - 24px, 1200px);
+  }
+  .home__hero-panel, .dog-card__body, .service-link {
+    padding: 20px;
+  }
+  .dog-card__meta div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .home__cta {
+    width: 100%;
+  }
+}
