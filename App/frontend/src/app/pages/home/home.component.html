@@ -74,7 +74,7 @@
       <a class="text-action" routerLink="/perros">Ver todos</a>
     </div>
 
-    <div class="cards-grid">
+    <div class="cards-grid featured-cards">
       @for (perro of destacados(); track perro.id) {
         <app-perro-card [perro]="perro" />
       }
